@@ -1,0 +1,69 @@
+<html>
+<head></head>
+<title>home</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<style type="text/css">
+    .container{
+        margin-top:10px;
+        margin-bottom:10px;
+        margin-left:10px;
+        margin-right:10px;
+    }
+</style>
+<body style="background-color:black">
+{% comment %} {{response}} {% endcomment %}
+<h1 style="color:white;text-align: center"><span style="color:red">COVID</span> WORLD WIDE DATA</h1>
+
+<center>
+    <form method='POST' action=''>
+        {% csrf_token %}
+        <select class='form-control' name='selectedcountry' placeholder="countries">
+                {% for c in mylist %}
+                <option> {{c}} </option>
+                {% endfor %}
+            <input type='submit' class="btn btn-danger">
+        </select>
+    </form>
+
+    <p><h1 style="color:blue;margin:120px">{{selectedcountry}}</h1></p>
+
+    <div class='d-flex justify-content-center align-items-center'>
+        <div class='container'style="background-color:blue;border-radius:10px;weidth:200px;height:100px">
+            <h2>{{total}}</h2>
+            <P>ttoal caseses</P>
+        </div>
+        <div class='container'style="background-color:green;border-radius:10px;weidth:200px;height:100px">
+            <h2>{{recovered}}</h2>
+            <P>recovered caseses</P>
+        </div>
+        <div class='container' style="background-color:grey;border-radius:10px;weidth:200px;height:100px">
+            <h2>{{active}}</h2>
+            <P>active caseses</P>
+
+        </div>
+    </div>
+
+    <div class='d-flex justify-content-center align-items-center'>
+        <div class='container'  style="border-radius:10px;background-color:red;weidth:200px;height:100px">
+            <h2>{{deaths}}</h2>
+            <P>deaths</P>
+        </div>
+        <div class='container' style="border-radius:10px;background-color:yellow;weidth:200px;height:100px">
+            <h2>{{new}}</h2>
+            <P>new</P>
+        </div>
+        <div class='container' style="border-radius:10px;background-color:pink;weidth:200px;height:100px">
+            <h2>{{critical}}</h2>
+            <P>critical</P>
+
+        </div>
+    </div>
+    
+
+<fotter>
+<center>
+<p style="margin top=10px"> all credits reserved to <span style="color:orange"><u><i>jmayank</span></p>
+</center>
+</fotter>
+</body>
+</html>
